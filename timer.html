@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Count down timer</title>
+    </head>
+<body>
+    <h1><u>Timer: </u></h1>
+    <p id="countdown"> &#9200;</p>
+</body>
+<style>
+body{
+    background-color: palegreen;
+}
+h1{
+    align-items: center;
+    margin: 100px;
+    color: darkgreen;
+    
+
+}
+p{
+    font-size: 60px;
+    align-items: center;
+    margin-left: 500px;
+    padding :50px;
+    width: 220px;
+    height:100px;
+    background-color: darkgreen;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+
+
+
+}
+</style>
+<script>
+var startingMinutes= prompt("Enter the time in minutes?");
+let time=startingMinutes*60
+const countdownEl=document.getElementById('countdown');
+setInterval(updateCountdown,1000);
+
+function updateCountdown(){
+    const minutes = Math.floor(time/60);
+    let seconds=time%60;
+    countdownEl.innerHTML=`${minutes}:${seconds}`;
+    time--;
+}
+</script>
+</html>
